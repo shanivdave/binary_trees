@@ -1,27 +1,13 @@
 #include "binary_trees.h"
 
-
 /**
- * heap_extract - Extracts the root node of a Max Binary Heap.
+ * heap_extract - extracts the root node of a Max Binary Heap
+ * @root: a double pointer to the root node of heap
  *
- * @root: A double pointer to the root node of heap.
- *
- * Return: The value stored in the root node.
+ * Return: the value stored in the root node
+ *         0 on failure
  */
 int heap_extract(heap_t **root)
 {
-	int value;
 
-	if (!*root)
-		return (0);
-	value = (*root)->n;
-	if (!(*root)->left)
-	{
-		value = (*root)->n;
-		free(*root);
-		*root = NULL;
-		return (value);
-	}
-	recurse_extract(*root);
-	return (value);
 }
